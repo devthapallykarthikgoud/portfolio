@@ -21,7 +21,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     requestAnimationFrame(raf);
 
     // Expose globally for GSAP ScrollTrigger
-    (window as Window & { lenis?: Lenis }).lenis = lenis;
+    (window as any).lenis = lenis;
 
     return () => { lenis.destroy(); };
   }, []);
